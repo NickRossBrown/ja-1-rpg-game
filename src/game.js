@@ -7,8 +7,8 @@ export class Character {
     this.jquery = jquery; // speed
     this.javascript = javascript; // attack
     this.inventory = {
-      redBull : 0,
-      w3Schools : 0
+      redBull : 0, // heals 30 health up to the max health
+      w3Schools : 0 // increases all stats
     };
     this.level = level;
     this.experience = 0;
@@ -22,7 +22,7 @@ export class Character {
     else return false;
   }
 
-  takeRedbull() {
+  takeRedBull() {
     this.currentHtml += 30;
     if (this.currentHtml > this.maxHtml) this.currentHtml = this.maxHtml;
     this.inventory["redBull"] = this.inventory["redBull"] - 1;
@@ -74,16 +74,21 @@ export class Character {
     }
   }
 
-  showRedbull() {
+  haveRedBull() {
     if (this.inventory["redBull"]) return true;
     else return false;
   }
 
-  showw3Schools() {
+  haveW3Schools() {
     if (this.inventory["w3Schools"]) return true;
     else return false;
   }
 
+  showRedBull() {
+    return this.inventory["redBull"];
+  }
 
-
+  showW3Schools() {
+    return this.inventory["w3Schools"];
+  }
 }
