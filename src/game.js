@@ -1,5 +1,5 @@
 export class Character {
-  constructor(name, html, css, jquery, javascript, level = 1) {
+  constructor(name, option, html, css, jquery, javascript, level = 1) {
     this.name = name;
     this.currentHtml = html; // current health
     this.maxHtml = html; // max health
@@ -12,6 +12,16 @@ export class Character {
     };
     this.level = level;
     this.experience = 0;
+    this.updateStats(option);
+  }
+  updateStats(option){
+    if(option === "c") {
+      this.cSharp();
+    } else if (option === "i") {
+      this.interfaces();
+    } else {
+      this.ruby();
+    }
   }
   attack(target) {
     target.currentHtml += target.css - this.javascript;
@@ -91,4 +101,30 @@ export class Character {
   showW3Schools() {
     return this.inventory["w3Schools"];
   }
+
+  cSharp() {
+    this.currentHtml = 80;
+    this.maxHtml = 80;
+    this.css = 10;
+    this.jquery = 60;
+    this.javascript = 90;
+  }
+
+  interfaces() {
+    this.currentHtml = 120;
+    this.maxHtml = 120;
+    this.css = 20;
+    this.jquery = 30;
+    this.javascript = 50;
+  }
+
+  ruby() {
+    this.currentHtml = 90;
+    this.maxHtml = 90;
+    this.css = 5;
+    this.jquery = 70;
+    this.javascript = 80;
+  }
+
+
 }

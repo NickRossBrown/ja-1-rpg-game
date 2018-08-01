@@ -5,9 +5,10 @@ import './styles.css';
 import { Character } from './game.js';
 
 $(document).ready(function() {
-  $("gameForm").submit(function(event) {
+  let newChar;
+  $(".gameForm").submit(function(event) {
     event.preventDefault();
-    let newChar = new Character("hi", 1, 1, 1, 1);
+    newChar = new Character($("#charName").val(), $("#charTrack option:selected").val());
     console.log(newChar);
   });
 });
