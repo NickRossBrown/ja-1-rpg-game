@@ -6,7 +6,10 @@ export class Character {
     this.css = css; // defense
     this.jquery = jquery; // speed
     this.javascript = javascript; // attack
-    this.inventory = {};
+    this.inventory = {
+      redBull : 0,
+      w3Schools : 0
+    };
     this.level = level;
     this.experience = 0;
   }
@@ -20,8 +23,9 @@ export class Character {
   }
 
   takeRedbull() {
-    this.currenthtml += 30;
+    this.currentHtml += 30;
     if (this.currentHtml > this.maxHtml) this.currentHtml = this.maxHtml;
+    this.inventory["redBull"] = this.inventory["redBull"] - 1;
   }
 
   browseW3Schools() {
@@ -31,6 +35,7 @@ export class Character {
     this.jquery += 20;
     this.javascript += 20;
     this.experience += 20;
+    this.inventory["w3Schools"] = this.inventory["w3Schools"] - 1;
   }
 
   gainExperience(target) {
@@ -38,7 +43,7 @@ export class Character {
   }
 
   checkIfLevelUp() {
-    if (10 - this.level < 0) return true;
+    if (10 - this.experience < 0) return true;
     else return false;
   }
 
@@ -51,4 +56,34 @@ export class Character {
     this.javascript += 15;
     this.experience = this.experience - 10;
   }
+
+  randomNumberForItemDrop() {
+    let rng = Math.floor(Math.random() * 10);
+    return rng;
+  }
+
+  itemDrop(rng){
+    if (rng < 6) {
+      return "You did not get any item from the enemy";
+    } else if (rng > 5 && rng < 9) {
+      this.inventory["redBull"] = this.inventory["redBull"]+1;
+      return "You got a RedBull!";
+    } else {
+      this.inventory["w3Schools"] = this.inventory["w3Schools"]+1;
+      return "You got a W3Schools Page!";
+    }
+  }
+
+  showRedbull() {
+    if (this.inventory["redBull"]) return true;
+    else return false;
+  }
+
+  showw3Schools() {
+    if (this.inventory["w3Schools"]) return true;
+    else return false;
+  }
+
+
+
 }
