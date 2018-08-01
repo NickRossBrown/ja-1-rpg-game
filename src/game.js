@@ -15,21 +15,17 @@ export class Character {
     this.updateStats(option);
   }
   updateStats(option){
-    if(option === "c") {
-      this.cSharp();
-    } else if (option === "i") {
-      this.interfaces();
-    } else {
-      this.ruby();
-    }
+    if(option === "c") this.cSharp();
+    else if (option === "i") this.interfaces();
+    else this.ruby();
   }
+
   attack(target) {
     target.currentHtml += target.css - this.javascript;
   }
 
   isDead() {
-    if (this.html <= 0) return true;
-    else return false;
+    return (this.html <= 0) ? true: false;
   }
 
   takeRedBull() {
@@ -53,8 +49,7 @@ export class Character {
   }
 
   checkIfLevelUp() {
-    if (10 - this.experience < 0) return true;
-    else return false;
+    return (10 - this.experience < 0) ? true: false;
   }
 
   levelUp() {
@@ -85,13 +80,11 @@ export class Character {
   }
 
   haveRedBull() {
-    if (this.inventory["redBull"]) return true;
-    else return false;
+    return (this.inventory["redBull"]) ? true: false;
   }
 
   haveW3Schools() {
-    if (this.inventory["w3Schools"]) return true;
-    else return false;
+    return (this.inventory["w3Schools"]) ? true: false;
   }
 
   showRedBull() {
