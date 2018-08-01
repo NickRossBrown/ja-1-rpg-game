@@ -123,7 +123,7 @@ export class Character {
     this.maxHtml = 90;
     this.css = 5;
     this.jquery = 70;
-    this.javascript = 80;
+    this.javascript = 75;
   }
 
 
