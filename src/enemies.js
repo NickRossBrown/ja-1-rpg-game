@@ -1,11 +1,11 @@
 import { Character } from './game.js';
 
-class Track extends Game {
+class Track extends Character {
 
 
 
  franz() {
  }
 
- 
+
 }

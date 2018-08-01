@@ -4,13 +4,13 @@ describe ('Character', function () {
   let testCharacter;
   let testCharacter2;
   beforeEach(function() {
-    testCharacter = new Character ("C#", 80, 0, 60, 50)
-    testCharacter2 = new Character ("C#", 80, 0, 60, 50)
+    testCharacter = new Character ("C#Student", "c")
+    testCharacter2 = new Character ("RubyStudent", "r")
   });
 
   it ('should test attack() method and subtract health from a target', function() {
     testCharacter.attack(testCharacter2);
-    expect(testCharacter2.currentHtml).toEqual(30);
+    expect(testCharacter2.currentHtml).toEqual(5);
   });
 
   it ('should test the idDead() method', function() {
