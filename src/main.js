@@ -11,4 +11,9 @@ $(document).ready(function() {
     newChar = new Character($("#charName").val(), $("#charTrack option:selected").val());
     console.log(newChar);
   });
+
+
+
+
+  
 });
