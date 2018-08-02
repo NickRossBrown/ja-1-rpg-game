@@ -24,7 +24,7 @@ export class Character {
 
   randomEnemy(rng) {
     let enemy;
-    if (rng < 7) {
+    if (rng < 1) {
       enemy = new Character("Code Bug", 0, 50, 5, 20, 20, 2);
     } else {
       enemy = new Character("Code Review Monster", 0, 100, 10, 45, 40, 4)
@@ -52,12 +52,13 @@ export class Character {
     this.css += 5;
     this.jquery += 20;
     this.javascript += 20;
-    this.experience += 20;
+    this.experience += 10;
+    this.levelUp();
     this.inventory["w3Schools"] = this.inventory["w3Schools"] - 1;
   }
 
   gainExperience(target) {
-    this.level += target.level;
+    this.experience += target.level;
   }
 
   checkIfLevelUp() {
@@ -116,11 +117,11 @@ export class Character {
   }
 
   interfaces() {
-    this.currentHtml = 120;
-    this.maxHtml = 120;
+    this.currentHtml = 1200;
+    this.maxHtml = 1200;
     this.css = 20;
     this.jquery = 30;
-    this.javascript = 50;
+    this.javascript = 80;
   }
 
   ruby() {

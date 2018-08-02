@@ -5,7 +5,8 @@
 .inventory,
 .yourTurn,
 .attackEnemy,
-.enemyTurn {
+.enemyTurn,
+.gameOver {
   display: none;
 }
 
