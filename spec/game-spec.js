@@ -46,10 +46,10 @@ describe ('Character', function () {
 
   });
 
-  it ('should test randomNumberForItemDrop() method to see if it returns a number between 0-9', function() {
-    let randomNumber = testCharacter.randomNumberForItemDrop();
+  it ('should test randomNumber() method to see if it returns a number between 0-9', function() {
+    let randomNumberTest = testCharacter.randomNumber();
     let possibleNumberArray = [0,1,2,3,4,5,6,7,8,9];
-    expect(possibleNumberArray.includes(randomNumber)).toEqual(true);
+    expect(possibleNumberArray.includes(randomNumberTest)).toEqual(true);
   });
 
   it ('should test itemDrop() method to see if adds an item', function() {

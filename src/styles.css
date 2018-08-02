@@ -2,6 +2,18 @@
 .battle,
 .stats,
 #home,
-.inventory {
+.inventory,
+.yourTurn,
+.attackEnemy,
+.enemyTurn {
   display: none;
+}
+
+.battleGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.battler {
+  outline: 1px blue solid;
 }

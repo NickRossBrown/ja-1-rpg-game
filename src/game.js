@@ -12,12 +12,24 @@ export class Character {
     };
     this.level = level;
     this.experience = 0;
-    this.updateStats(option);
+    if (option) {
+      this.updateStats(option);
+    }
   }
-  updateStats(option){
+  updateStats(option) {
     if(option === "c") this.cSharp();
     else if (option === "i") this.interfaces();
     else this.ruby();
+  }
+
+  randomEnemy(rng) {
+    let enemy;
+    if (rng < 7) {
+      enemy = new Character("Code Bug", 0, 50, 5, 20, 20, 2);
+    } else {
+      enemy = new Character("Code Review Monster", 0, 100, 10, 45, 40, 4)
+    }
+    return enemy;
   }
 
   attack(target) {
@@ -62,7 +74,7 @@ export class Character {
     this.experience = this.experience - 10;
   }
 
-  randomNumberForItemDrop() {
+  randomNumber() {
     let rng = Math.floor(Math.random() * 10);
     return rng;
   }

@@ -17,6 +17,68 @@ $(document).ready(function() {
     $("#home").show();
     $(".menu").hide();
     $(".battle").show();
+    let enemy = newChar.randomEnemy(newChar.randomNumber());
+    let charName = newChar.name;
+    let charHealth = newChar.currentHtml;
+    let charMaxHealth = newChar.maxHtml;
+    let charDefense = newChar.css;
+    let charSpeed = newChar.jquery;
+    let charAttack = newChar.javascript;
+    let charLevel = newChar.level;
+    let charExperience = newChar.experience;
+
+    let enemyName = enemy.name;
+    let enemyHealth = enemy.currentHtml;
+    let enemyMaxHealth = enemy.maxHtml;
+    let enemyDefense = newChar.css;
+    let enemySpeed = newChar.jquery;
+    let enemyAttack = newChar.javascript;
+    let enemyLevel = enemy.level;
+    let enemyExperience = newChar.experience;
+
+    $(".charBattleName").text(`Name: ${charName}`);
+    $(".charBattleHealth").text(`HTML: ${charHealth} / ${charMaxHealth}`);
+    $(".charBattleLevel").text(`Level: ${charLevel}`);
+
+    $(".enemyBattleName").text(`Name: ${enemyName}`);
+    $(".enemyBattleHealth").text(`HTML: ${enemyHealth} / ${enemyMaxHealth}`);
+    $(".enemyBattleLevel").text(`Level: ${enemyLevel}`);
+
+    if (charSpeed > enemySpeed) {
+      $(".attackEnemy").show();
+      $(".yourTurn").show();
+    } else {
+
+      $(".enemyTurn").show();
+      setTimeout(function() {
+        enemy.attack(newChar),
+        $(".enemyTurn").hide(),
+        $(".attackEnemy").show(),
+        $(".yourTurn").show(),
+        charHealth = newChar.currentHtml,
+        $(".charBattleHealth").text(`HTML: ${charHealth} / ${charMaxHealth}`);
+      }, 2000);
+    }
+
+    $(".attackEnemy").click(function() {
+      newChar.attack(enemy);
+      setTimeout(function() {
+        $(".enemyTurn").show(),
+        enemyHealth = enemy.currentHtml,
+        $(".enemyBattleHealth").text(`HTML: ${enemyHealth} / ${enemyMaxHealth}`);
+      }, 2000);
+    });
+
+  });
+
+
+
+
+
+  $(".bossBattle").click(function() {
+    $("#home").show();
+    $(".menu").hide();
+    $(".battle").show();
   });
 
   $("#home").click(function() {
@@ -48,8 +110,6 @@ $(document).ready(function() {
     $(".showAttack").text(`Javascript: ${attack}`);
     $(".showLevel").text(`Level: ${level}`);
     $(".showExperience").text(`Experience: ${experience}`);
-
-
 
   });
 
