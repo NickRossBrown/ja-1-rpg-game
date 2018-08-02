@@ -1,0 +1,7 @@
+.menu,
+.battle,
+.stats,
+#home,
+.inventory {
+  display: none;
+}
